@@ -14,17 +14,19 @@
 
 .status{
     position: absolute;
-    top: 95%;
-    left: 2%;
+    top: 90%;
+    left: 4%;
+    
 }
 
 .container{
     border: 5px solid gray;
     max-width: 50%;
+    min-width: 300px;
     height: 70%;
     width: 40%;
     position: relative;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,9 +59,22 @@
 .clrplt{
     border: 5px solid red;
     max-width: 50%;
+    min-width: 300px;
     width: 40%;
     height: 70%;
-    
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.clrplt>h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0;
 }
 
 

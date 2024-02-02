@@ -3,6 +3,16 @@ const stopbtn = document.querySelector('.stop');
 const body = document.querySelector('.clrplt');
 const haxClr = document.querySelector('.haxClr');
 const rgbClr = document.querySelector('.rgbClr');
+const intervalTime = document.querySelector('#number');
+const setTime = document.querySelector('.set');
+let settime = 1000;
+
+
+
+ 
+
+
+
 
 // haxClr.innerHTML = 'Mandeep';
 const randomColor = () => {
@@ -24,6 +34,16 @@ const commanCss = (ele, clr) => {
 
 let stItvrl;
 const startChanging = () => {
+    stopChanging();
+
+
+    // geting time function starts
+        let time = intervalTime.value;
+        if (!time.length)   console.log("Please enter a valid number");
+        else    (time < 100 || time > 5000) ?   console.log("Please Enter an Interval between 100ms and 5000ms") : settime = time;
+    // geting time function ENDS
+
+    
     if (!stItvrl) {
         stItvrl = setInterval(() => {
             let clr = body.style.backgroundColor = randomColor();
@@ -33,7 +53,7 @@ const startChanging = () => {
             rgbClr.innerHTML = body.style.backgroundColor;
             haxClr.style.backgroundColor = randomColor();
             
-        }, 2000);
+        }, settime);
         console.log("SetInterval STarted!");
     }
 };
